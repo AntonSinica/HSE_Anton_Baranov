@@ -39,51 +39,45 @@ def start(update, _):
     update.message.reply_text('Выберете, что хотите сделать с ботом:', reply_markup=reply_markup)
 
 
-def b_1(update: Update, context: CallbackContext):
+def help_command(update, _):
+    update.message.reply_text("Используйте `/start` для начала работы с ботом.")
+
+
+def b_back():
     keyboard2 = [[button_back]]
     reply_markup = ReplyKeyboardMarkup(keyboard2)
+    return reply_markup
+
+
+def b_1(update: Update, context: CallbackContext):
     update.message.reply_text('Этот бот умеет кричать: '
-                              'ААААААААААААААААААААААААААААААААААААААА', reply_markup=reply_markup)
+                              'ААААААААААААААААААААААААААААААААААААААА', reply_markup=b_back())
 
 
 def b_2(update: Update, context: CallbackContext):
-    keyboard2 = [[button_back]]
-    reply_markup = ReplyKeyboardMarkup(keyboard2)
     update.message.reply_text('В готовых сценариях бот тоже кричит: '
-                              'ААААААААААААААААААААААААААААААААААААААА', reply_markup=reply_markup)
+                              'ААААААААААААААААААААААААААААААААААААААА', reply_markup=b_back())
 
 
 def b_3(update: Update, context: CallbackContext):
-    keyboard2 = [[button_back]]
-    reply_markup = ReplyKeyboardMarkup(keyboard2)
     update.message.reply_text('Окей, бот кричит: '
-                              'ААААААААААААААААААААААААААААААААААААААА', reply_markup=reply_markup)
+                              'ААААААААААААААААААААААААААААААААААААААА', reply_markup=b_back())
 
 
 def b_4(update: Update, context: CallbackContext):
-    keyboard2 = [[button_back]]
-    reply_markup = ReplyKeyboardMarkup(keyboard2)
     update.message.reply_text('Всего один популярный вопрос: зачем бот кричит? \n'
                               'Ответ: нет ответа. \n'
-                              'ААААААААААААААААААААААААААААААААААААААА', reply_markup=reply_markup)
+                              'ААААААААААААААААААААААААААААААААААААААА', reply_markup=b_back())
 
 
 def b_5(update: Update, context: CallbackContext):
-    keyboard2 = [[button_back]]
-    reply_markup = ReplyKeyboardMarkup(keyboard2)
     update.message.reply_text('Настраивать нечего. '
-                              'ААААААААААААААААААААААААААААААААААААААА', reply_markup=reply_markup)
+                              'ААААААААААААААААААААААААААААААААААААААА', reply_markup=b_back())
 
 
 def b_6(update: Update, context: CallbackContext):
-    keyboard2 = [[button_back]]
-    reply_markup = ReplyKeyboardMarkup(keyboard2)
     update.message.reply_text('Да в принципе и без пожертвований можно уже. '
-                              'ААААААААААААААААААААААААААААААААААААААА', reply_markup=reply_markup)
-
-
-def help_command(update, _):
-    update.message.reply_text("Используйте `/start` для начала работы с ботом.")
+                              'ААААААААААААААААААААААААААААААААААААААА', reply_markup=b_back())
 
 
 if __name__ == '__main__':
