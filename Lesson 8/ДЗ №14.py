@@ -12,6 +12,9 @@
 from telegram import Update, KeyboardButton, ReplyKeyboardMarkup
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler, CallbackContext, MessageHandler, Filters
 
+updater = Updater("ВВЕДИТЕ ТОКЕН БОТА")
+app = updater.dispatcher
+
 button_1 = KeyboardButton("Что умеет этот бот")
 button_2 = KeyboardButton("Готовые сценарии")
 button_3 = KeyboardButton("Начать пользоваться ботом")
@@ -81,9 +84,6 @@ def b_6(update: Update, context: CallbackContext):
 
 
 if __name__ == '__main__':
-
-    updater = Updater("ВВЕДИТЕ ТОКЕН БОТА")
-    app = updater.dispatcher
 
     app.add_handler(CommandHandler('start', start))
     app.add_handler(CommandHandler('help', help_command))
