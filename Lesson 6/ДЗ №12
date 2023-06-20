@@ -8,6 +8,9 @@
 2) https://api.nasdaq.com/api/marketmovers?assetclass=stocks&exchangeStatus=currentMarket
 3) https://api.nasdaq.com/api/quote/list-type-extended/RTAT
 
+Скрытые API сайта https://www.lme.com/ (пример):
+1) https://www.lme.com/Lme-api/MemberNoticesSearchApi/Get?SearchConfigId=5a3cde69-258e-43d7-a050-3e114ea08225&page=1
+
 Скрытые API сайта https://5ka.ru/ (некоторые примеры):
 1) https://5ka.ru/api/v3/stores/count
 2) https://api-maps.yandex.ru/2.1.79/build/release/images/cursor/grab.cur
