@@ -1,0 +1,23 @@
+Задание
+
+Изучите через консоль разработчика в браузере сайты на предмет наличия скрытых API:
+
+
+Скрытые API сайта https://www.nasdaq.com/ (некоторые примеры):
+1) https://api.nasdaq.com/api/quote/basic?&symbol=fdx%7cstocks
+2) https://api.nasdaq.com/api/marketmovers?assetclass=stocks&exchangeStatus=currentMarket
+3) https://api.nasdaq.com/api/quote/list-type-extended/RTAT
+
+Скрытые API сайта https://5ka.ru/ (некоторые примеры):
+1) https://5ka.ru/api/v3/stores/count
+2) https://api-maps.yandex.ru/2.1.79/build/release/images/cursor/grab.cur
+3) https://api-maps.yandex.ru/2.1.79/build/release/images/cursor/help.cur
+
+Скрытые API сайта https://fedresurs.ru/ (некоторые примеры):
+1) https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap
+2) https://fedresurs-demo.interfax.ru/assets/js/cadesplugin_api.js
+
+Скрытые API сайта https://kad.arbitr.ru/ (некоторые примеры):
+1) https://vk.com/js/api/openapi.js?167
+2) https://rad.arbitr.ru/Wasm/api/v1/wasm.js?_=1687257603327
+3) https://vkontakte.ru/js/api/share.js?9
