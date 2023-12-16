@@ -1,0 +1,89 @@
+!!!В ПРОЦЕССЕ ВЫПОЛНЕНИЯ!!!
+!!!В ПРОЦЕССЕ ВЫПОЛНЕНИЯ!!!
+!!!В ПРОЦЕССЕ ВЫПОЛНЕНИЯ!!!
+
+Шаг 1
+(Создание таблиц)
+-- Создание таблицы Educational_journal
+CREATE TABLE Educational_journal (
+  id INT PRIMARY KEY,
+  students_id INT,
+  subjects_id INT,
+  teachers_id INT,
+  grades_id INT,
+  date DATE
+);
+
+-- Создание таблицы Students
+CREATE TABLE Students (
+  student_id INT PRIMARY KEY,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  date_of_birth DATE,
+  contact_info VARCHAR(50)
+);
+
+-- Создание таблицы Teachers
+CREATE TABLE Teachers (
+  teacher_id INT PRIMARY KEY,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  date_of_birth DATE,
+  contact_info VARCHAR(50)
+);
+
+-- Создание таблицы Subjects
+CREATE TABLE Subjects (
+  subject_id INT PRIMARY KEY,
+  title VARCHAR(100),
+  description VARCHAR(25) CHECK (description IN ('Гуманитарная наука', 'Математиче-ская наука'))
+);
+
+-- Создание таблицы Grades
+CREATE TABLE Grades (
+  grade_id INT PRIMARY KEY,
+  grade INT CHECK (grade >= 1 AND grade <= 5),
+  grade_text VARCHAR(25)
+);
+ШАГ 2
+(Связывание таблиц)
+-- Добавление внешних ключей
+ALTER TABLE Educational_journal
+    ADD CONSTRAINT FK_Students FOREIGN KEY (students_id) REFERENCES Stu-dents(student_id),
+    ADD CONSTRAINT FK_Subjects FOREIGN KEY (subjects_id) REFERENCES Sub-jects(subject_id),
+    ADD CONSTRAINT FK_Teachers FOREIGN KEY (teachers_id) REFERENCES Teach-ers(teacher_id),
+    ADD CONSTRAINT FK_Grades FOREIGN KEY (grades_id) REFERENCES Grades(grade_id);
+Шаг 3
+(Уникальные индексы)
+-- Создание уникального индекса для таблицы Students
+CREATE UNIQUE INDEX UX_Students_ContactInfo ON Students (contact_info);
+
+-- Создание уникального индекса для таблицы Teachers
+CREATE UNIQUE INDEX UX_Teachers_ContactInfo ON Teachers (contact_info);
+
+-- Создание уникального индекса для таблицы Subjects
+CREATE UNIQUE INDEX UX_Subjects_Title ON Subjects (title);
+
+-- Создание уникального индекса для таблицы Grades
+CREATE UNIQUE INDEX UX_Grades_Grade ON Grades (grade);
+ШАГ 4
+(Вставка, обновление, удаление значения)
+-- Вставка записи о новом студенте
+INSERT INTO Students (student_id, first_name, last_name, date_of_birth, contact_info)
+VALUES (1, 'Иван', 'Иванов', '1995-05-15', 'ivanov@example.com');
+
+-- Вставка и обновление информации о преподавателе
+INSERT INTO Teachers (teacher_id, first_name, last_name, date_of_birth, contact_info)
+VALUES (1, 'Петр', 'Петров', '1965-01-11', 'petrov@example.com');
+
+UPDATE Teachers
+SET contact_info = 'petrov65@example.com'
+WHERE teacher_id = 1;
+
+-- Вставка и удаление информации о предмете
+INSERT INTO Teachers (teacher_id, first_name, last_name, date_of_birth, contact_info)
+VALUES (1, 'Петр', 'Петров', '1965-01-11', 'petrov@example.com');
+
+UPDATE Teachers
+SET contact_info = 'petrov65@example.com'
+WHERE teacher_id = 1;
